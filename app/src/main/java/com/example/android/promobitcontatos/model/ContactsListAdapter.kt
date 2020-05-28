@@ -56,6 +56,7 @@ class ContactsListAdapter(
         newContactText.isClickable = false
 
         val btnMore = itemLayout!!.findViewById<View>(R.id.BtnMore) as ImageView
+        btnMore.setOnClickListener(View.OnClickListener { TODO("") })
 
         return itemLayout as LinearLayout
     }
