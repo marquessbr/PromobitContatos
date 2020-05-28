@@ -1,6 +1,6 @@
 package com.example.android.promobitcontatos.model
 
-class Contact(
+class ContactItem(
     id: Int,
     name: String,
     company: String,
