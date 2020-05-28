@@ -31,7 +31,6 @@ class CaontactsFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_contacts, container, false)
 
 
-
         return root
     }
 }
