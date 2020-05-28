@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.android.promobitcontatos.R
 
-class GalleryFragment : Fragment() {
+class CardsFragment : Fragment() {
 
-    private lateinit var galleryViewModel: GalleryViewModel
+    private lateinit var cardsViewModel: CardsViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
-                ViewModelProvider(this).get(GalleryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
+        cardsViewModel =
+                ViewModelProvider(this).get(CardsViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_cards, container, false)
         val textView: TextView = root.findViewById(R.id.text_gallery)
-        galleryViewModel.text.observe(viewLifecycleOwner, Observer {
+        cardsViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

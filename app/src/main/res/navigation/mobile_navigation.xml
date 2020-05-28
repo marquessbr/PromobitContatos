@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_contacts">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.android.promobitcontatos.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_contacts"
+        android:name="com.example.android.promobitcontatos.ui.home.CaontactsFragment"
+        android:label="@string/menu_contacts"
+        tools:layout="@layout/fragment_contacts" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.android.promobitcontatos.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_cards"
+        android:name="com.example.android.promobitcontatos.ui.gallery.CardsFragment"
+        android:label="@string/menu_cards"
+        tools:layout="@layout/fragment_cards" />
 
 </navigation>
