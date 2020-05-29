@@ -27,11 +27,12 @@ import java.util.HashMap
 
 class CaontactsFragment : Fragment() {
 
+    enum class Filter {TUDO,COM_FOTO, NOME }
     private lateinit var mContext: Context
 
     lateinit var mProgressBar: ProgressBar
     private var mContactsItens: ListView? = null
-    private var contacts: ArrayList<ContactItem>? = null
+    private var mContactsArray: ArrayList<ContactItem> = ArrayList<ContactItem>()
 
     var mAdapter: ContactsListAdapter? = null
 
@@ -149,7 +150,6 @@ class CaontactsFragment : Fragment() {
                     }
 
                     if (contactsList!!.size > 0) {
-                        mAdapter!!.clear()
                         var oitem: ContactItem
                         for (it in contactsList!!) {
                             oitem = ContactItem(
@@ -158,8 +158,9 @@ class CaontactsFragment : Fragment() {
                                 it[TAG_COMPANY]!!,
                                 it[TAG_PHOTO]!!,
                                 if (it[TAG_NEW]!! == "true") true else false)
-                            mAdapter!!.add(oitem)
+                            mContactsArray!!.add(oitem)
                         }
+                        fillAdapter(Filter.COM_FOTO)
                     }
                 } else {
                     Toast.makeText(mContext, "Nenhum contato", Toast.LENGTH_SHORT).show()
@@ -172,6 +173,22 @@ class CaontactsFragment : Fragment() {
                 e.printStackTrace()
             }
 
+        }
+    }
+
+    private fun fillAdapter(filter: Filter) {
+        mAdapter!!.clear()
+        when (filter) {
+            Filter.TUDO -> {
+                for (item in mContactsArray!!)
+                    mAdapter!!.add(item)
+            }
+            Filter.COM_FOTO -> {
+                for (item in mContactsArray!!)
+                    if (item.getPhoto() != "https://i.pravatar.cc/300")
+                        mAdapter!!.add(item)
+            }
+            Filter.NOME -> {}
         }
     }
 
