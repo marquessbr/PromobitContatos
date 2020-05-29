@@ -9,14 +9,13 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.ListView
-import android.widget.ProgressBar
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import com.armando.raonimotores.ossonhosdeaaz.controller.JSONParser
 import com.example.android.promobitcontatos.R
 import com.example.android.promobitcontatos.model.ContactItem
 import com.example.android.promobitcontatos.model.ContactsListAdapter
+import kotlinx.android.synthetic.main.fragment_contacts.*
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
@@ -28,8 +27,11 @@ class CaontactsFragment : Fragment() {
     private lateinit var mContext: Context
 
     lateinit var mProgressBar: ProgressBar
+    lateinit var mPlaceholder: LinearLayout
+    lateinit var mPlaceholderText: TextView
     private var mContactsItens: ListView? = null
     private var mContactsArray: ArrayList<ContactItem> = ArrayList<ContactItem>()
+
 
     var mAdapter: ContactsListAdapter? = null
 
@@ -42,6 +44,7 @@ class CaontactsFragment : Fragment() {
         super.onAttach(context)
         this.mContext = context
     }
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -56,10 +59,17 @@ class CaontactsFragment : Fragment() {
 
         mAdapter = ContactsListAdapter(mContext)
         contactsList = ArrayList()
-        if (isNetworkConnected())
+        mPlaceholder = root.findViewById(R.id.empty)
+        mPlaceholderText = root.findViewById(R.id.empty_text) as TextView
+        if (isNetworkConnected()) {
             LoadContacts().execute("")
-        else {
-            TODO("implementar o placeholder para no ineternet")
+            mContactsItens!!.visibility = View.VISIBLE
+            mPlaceholder.visibility = View.GONE
+            mPlaceholderText.text = ""
+        } else {
+            mContactsItens!!.visibility = View.GONE
+            mPlaceholder.visibility = View.VISIBLE
+            mPlaceholderText.text = "Erro na conexao com a internet"
         }
         mContactsItens!!.adapter = mAdapter
         return root
@@ -161,12 +171,16 @@ class CaontactsFragment : Fragment() {
                     }
                 } else {
                     Toast.makeText(mContext, "Nenhum contato", Toast.LENGTH_SHORT).show()
-                    mAdapter!!.clear()
+                    mContactsItens!!.visibility = View.GONE
+                    mPlaceholder.visibility = View.VISIBLE
+                    mPlaceholderText.text = "Nenhum contato inserido"
                 }
 
             } catch (e: JSONException) {
                 Toast.makeText(mContext, "Erro na busca", Toast.LENGTH_SHORT).show()
-                mAdapter!!.clear()
+                mContactsItens!!.visibility = View.GONE
+                mPlaceholder.visibility = View.VISIBLE
+                mPlaceholderText.text = "Nenhum contato inserido"
                 e.printStackTrace()
             }
 
