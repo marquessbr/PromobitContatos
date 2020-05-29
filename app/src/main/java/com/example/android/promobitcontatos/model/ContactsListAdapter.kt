@@ -2,14 +2,17 @@ package com.example.android.promobitcontatos.model
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.BaseAdapter
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
 import com.example.android.promobitcontatos.R
 import com.squareup.picasso.Picasso
-import java.util.ArrayList
+import com.squareup.picasso.Transformation
+import java.util.*
 
 class ContactsListAdapter(
     private val mContext: Context
@@ -56,6 +59,7 @@ class ContactsListAdapter(
 
         val contactPhoto = itemLayout!!.findViewById<View>(R.id.ContactPhoto) as ImageView
         Picasso.get().load(contactItem.getPhoto()).into(contactPhoto);
+
         val newContactText = itemLayout!!.findViewById<View>(R.id.NewContactText) as TextView
         newContactText.visibility = View.INVISIBLE
         if (contactItem.getNew())
