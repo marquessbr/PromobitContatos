@@ -116,7 +116,7 @@ class CaontactsFragment : Fragment() {
 
             val email = voids[0]
             val params = HashMap<String, String>()
-            params["email"] = email as String
+            params["empty"] = "not_send"
             val json = JSONParser.makeHttpRequest(urlSender, params)
             return if (json == "") {
                 "0"

@@ -14,10 +14,14 @@ object JSONParser {
     fun makeHttpRequest(reqURL: String, postDataParams: HashMap<String, String>?): String {
 
         var resultString = "fail"
+        var reqParam = ""
+        var mURL = URL(reqURL)
 
-//        val reqParam = makeUrlParams(postDataParams)
+        if (postDataParams!!.size > 1) {
+            reqParam = makeUrlParams(postDataParams)
+            mURL = URL("$reqURL?$reqParam")
+        }
 
-        val mURL = URL(reqURL)
         try {
             with(mURL.openConnection() as HttpURLConnection) {
                 // optional default is GET
