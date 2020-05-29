@@ -53,7 +53,9 @@ class ContactsListAdapter(
         companyContactText.text = contactItem.getCompany()
 
         val newContactText = itemLayout!!.findViewById<View>(R.id.NewContactText) as TextView
-        newContactText.isClickable = false
+        newContactText.visibility = View.INVISIBLE
+        if (contactItem.getNew())
+            newContactText.visibility = View.VISIBLE
 
         val btnMore = itemLayout!!.findViewById<View>(R.id.BtnMore) as ImageView
         btnMore.setOnClickListener(View.OnClickListener { TODO("") })
