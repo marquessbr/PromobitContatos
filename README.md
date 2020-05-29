@@ -10,9 +10,12 @@ Foi criado um filtro para exibir somente os contatos com fotos reais
 Foi utilizado a bilioteca PICASSO para fazer o Deownload das imagens
 Foi utilizada a biblioteca siyamed:android-shape-imageview para fazer a foto aparcer circular no adapter
 
-2 - Tela Incluir Novo Contato
+2 - Tela Incluir Novo Contato. 
+
 A Tela Incluir Novo Contato foi criada para o usuario incluir contatos quando clicar no botao FAB
 Nesta tela, o usuario informa os dados e clica no botao Salvar que faz uma solicitacoa POST para uma API propria e que salva os dados num dabase sqlite em um servidor.
 
-3 - A API para salvar dados Foi criada de um script em PHP que recebe os dados informados no formulário pertinente passando-os como parâmetros REQUEST/POST para a API e são gravados em um db salite in memory visto o mesmo ter sido informado no referido estudo da não necessidade de atualizar dados na API
+3 - A API para salvar dados 
+
+Foi criada de um script em PHP que recebe os dados informados no formulário pertinente passando-os como parâmetros REQUEST/POST para a API e são gravados em um db salite in memory visto o mesmo ter sido informado no referido estudo da não necessidade de atualizar dados na API
 O referido arquivo esta disponivel na pasta root do git do projeto.
