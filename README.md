@@ -19,3 +19,9 @@ Nesta tela, o usuario informa os dados e clica no botao Salvar que faz uma solic
 
 Foi criada de um script em PHP que recebe os dados informados no formulário pertinente passando-os como parâmetros REQUEST/POST para a API e são gravados em um db salite in memory visto o mesmo ter sido informado no referido estudo da não necessidade de atualizar dados na API
 O referido arquivo esta disponivel na pasta root do git do projeto.
+
+
+4 - Argumento para a arquitetura
+
+Foi utilizada a arquiteura emquestao, visto que, o template do Android Studio pode ser rapidamente modificado para atender ao layout proposto pelo estudo de caso, entrentanto, o curto espaco de tempo nao permitiu maior aproveitamento do mesmo, mas o aplicativo ficou como solicitado e completamente funcional dentro dos requisitos solicitados.
+
