@@ -3,7 +3,8 @@ Teste para dev da promobit
 
 O app Promobit Contatos foi implementado usando Material Design como solicitado em Kotlin nativo e usando Navigation Drawer como interface
 
-1 - Tela Inicial Contatos
+1 - Tela Inicial Contatos  
+
 A Tela Inicial foi implementada com um adapter de um listview que recebe os dados da solicitacao GET diretamente no link da API fornecido e retornando os dados brutos e modificados em runtime para atender ao metodo de chamada da activity correspondente, activity esta, derivada de uma classe Fragment
 Foi criado um filtro para exibir somente os contatos com fotos reais
 Foi utilizado a bilioteca PICASSO para fazer o Deownload das imagens
