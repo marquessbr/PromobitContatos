@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.new_contact.*
 class NewContact: AppCompatActivity() {
 
     lateinit var btnsend: TextView
+    var ID = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,9 +28,39 @@ class NewContact: AppCompatActivity() {
                     !editTextPhone.text.equals("") ||
                     !editTextWebsite.text.equals("") ||
                     !editTextCustomNote.text.equals("")
-            if (tudoOk)
-                TODO("")
+            if (tudoOk) {
+                ID++
+                SendToSave(
+                    ID.toString(),
+                    editTextName.text.toString(),
+                    editTextCompany!!.text.toString(),
+                    editTextEmail!!.text.toString(),
+                    editTextPhone!!.text.toString(),
+                    editTextWebsite!!.text.toString(),
+                    editTextCustomNote!!.text.toString()
+                )
+            }
         })
+    }
+
+    private fun SendToSave(
+        id: String,
+        name: String,
+        company: String,
+        email: String,
+        phone: String,
+        website: String,
+        CustonNote: String) {
+
+        SendDreamToInterpret().execute(
+            id,
+            name,
+            company,
+            email,
+            phone,
+            website,
+            CustonNote
+        )
     }
 
     /*
