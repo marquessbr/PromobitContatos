@@ -1,4 +1,4 @@
-# PromobitContatos
+# Promobit Contatos
 Teste para dev da promobit
 
 O app Promobit Contatos foi implementado usando Material Design como solicitado em Kotlin nativo e usando Navigation Drawer como interface
