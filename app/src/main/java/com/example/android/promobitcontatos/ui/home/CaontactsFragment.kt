@@ -8,9 +8,7 @@ import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ListView
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -22,12 +20,11 @@ import com.example.android.promobitcontatos.model.ContactsListAdapter
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import java.util.ArrayList
-import java.util.HashMap
+import java.util.*
 
 class CaontactsFragment : Fragment() {
 
-    enum class Filter {TUDO,COM_FOTO, NOME }
+    enum class Filter {TUDO,COM_FOTO, NAZ, NZA, CAZ, CZA }
     private lateinit var mContext: Context
 
     lateinit var mProgressBar: ProgressBar
@@ -37,7 +34,7 @@ class CaontactsFragment : Fragment() {
     var mAdapter: ContactsListAdapter? = null
 
     private val urlSender =
-        "http://www.raonimotores.com.br/mobiles/getcontacts.php"
+        "https://demo9508811.mockable.io/contacts"
     private var contactsList: ArrayList<HashMap<String, String>>? = null
     private var jsonResult: JSONArray? = null
 
@@ -188,7 +185,36 @@ class CaontactsFragment : Fragment() {
                     if (item.getPhoto() != "https://i.pravatar.cc/300")
                         mAdapter!!.add(item)
             }
-            Filter.NOME -> {}
+            Filter.NAZ -> {}
+            Filter.NZA -> {}
+            Filter.CAZ -> {}
+            Filter.CZA -> {}
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        inflater.inflate(R.menu.main, menu)
+        return
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            R.id.f_tudo -> {
+                fillAdapter(Filter.TUDO)
+                true
+            }
+            R.id.f_com_photo -> {
+                fillAdapter(Filter.COM_FOTO)
+                true
+            }
+            R.id.f_com_photo -> {
+                fillAdapter(Filter.COM_FOTO)
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
@@ -201,19 +227,5 @@ class CaontactsFragment : Fragment() {
         private const val TAG_PHOTO = "photo"
         private const val TAG_NEW = "new"
 
-        /*
-            id: Int,
-    name: String,
-    company: String,
-    photo : String,
-    new: Boolean
-
-
-"id": 2,
-			"name": "Fabio Ribeiro",
-			"company": "Asus",
-			"photo" : "https://i.pravatar.cc/300",
-			"new": true
-        */
     }
 }

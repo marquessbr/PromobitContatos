@@ -32,7 +32,12 @@ object JSONParser {
                         inputLine = it.readLine()
                     }
                     it.close()
-                    resultString = response.toString()
+                    val r = response.toString()
+                    val s = r.replace("\t","")
+                    val t = s.replace("}]}","}]")
+                    val u = "$t,\"success\":\"1\",\"message\":\"%s\"}"
+                    resultString = u
+                    Log.d("ttt", "rrr")
                 }
             }
 

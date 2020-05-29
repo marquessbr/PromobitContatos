@@ -2,8 +2,38 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/f_tudo"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/action_ftudo"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/f_com_photo"
+        android:orderInCategory="100"
+        android:title="@string/action_com_foto"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/n_atoz"
+        android:orderInCategory="100"
+        android:title="@string/action_natoz"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/n_ztoa"
+        android:orderInCategory="100"
+        android:title="@string/action_nztoa"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/c_atoz"
+        android:orderInCategory="100"
+        android:title="@string/action_catoz"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/c_ztoa"
+        android:orderInCategory="100"
+        android:title="@string/action_cztoa"
         app:showAsAction="never" />
 </menu>

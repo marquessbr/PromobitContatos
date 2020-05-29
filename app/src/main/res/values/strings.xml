@@ -9,4 +9,10 @@
 
     <string name="menu_contacts">Meus Contatos</string>
     <string name="menu_cards">Meus Cartões</string>
+    <string name="action_ftudo">Mostrar Todos</string>
+    <string name="action_com_foto">Mostrar com Foto</string>
+    <string name="action_natoz">Nomes A-Z</string>
+    <string name="action_nztoa">Nomes Z-A</string>
+    <string name="action_cztoa">Company Z-A</string>
+    <string name="action_catoz">Company A-Z</string>
 </resources>
