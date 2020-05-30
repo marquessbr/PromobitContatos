@@ -17,7 +17,7 @@ Nesta tela, o usuario informa os dados e clica no botao Salvar que faz uma solic
 
 3 - A API para salvar dados 
 
-Foi criada de um script em PHP que recebe os dados informados no formulário pertinente passando-os como parâmetros REQUEST/POST para a API e são gravados em um db salite in memory visto o mesmo ter sido informado no referido estudo da não necessidade de atualizar dados na API
+Foi criada de um script em PHP "savecontacts.php" que recebe os dados informados no formulário pertinente passando-os como parâmetros REQUEST/POST para a API e são gravados em um db salite in memory visto o mesmo ter sido informado no referido estudo da não necessidade de atualizar dados na API
 O referido arquivo esta disponivel na pasta root do git do projeto.
 
 
