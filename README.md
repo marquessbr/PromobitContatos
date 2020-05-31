@@ -5,7 +5,7 @@ O app Promobit Contatos foi implementado em Kotlin nativo tendo Material Design 
 
 1 - Tela Inicial Contatos 
 
-A Tela Inicial foi implementada com um adapter para um listview que recebe os dados da solicitação GET diretamente do link da API fornecido e retorna os dados brutos que são modificados em “runtime” para atender ao método de chamada da activity correspondente, activity esta, derivada de uma classe Fragment.
+A Tela Inicial foi implementada com um adapter para um listview que recebe os dados da solicitação GET diretamente do link da API fornecido e retorna os dados brutos que são modificados em “runtime” para atender ao método de chamada da activity correspondente, activity esta, derivada de uma classe Fragment.  
 Foi criado um filtro para exibir somente os contatos com fotos reais e que é disparado quando a tela é iniciada.  
 Foi utilizado a biblioteca PICASSO para fazer o Download das imagens.  
 Foi utilizada a biblioteca siyamed:android-shape-imageview para fazer a foto aparecer redonda no view do adapter.
@@ -16,7 +16,7 @@ A Tela Incluir Novo Contato foi criada para o usuário incluir contatos quando c
 
 3 - A API para salvar dados 
 
-Foi criada de um script em PHP: "savecontacts.php", que recebe os dados informados no formulário da UI e os transmite como parâmetros enviados para o script da API via “url” que  os verifica e os recebe em uma instrução “REQUEST/POST” e os grava em um db sqlite, in memory, visto que, no estudo de caso foi informado ser desnecessário atualizar os dados na API.
+Foi criada de um script em PHP: "savecontacts.php", que recebe os dados informados no formulário da UI e os transmite como parâmetros enviados para o script da API via “url” que  os verifica e os recebe em uma instrução “REQUEST/POST” e os grava em um db sqlite, in memory, visto que, no estudo de caso foi informado ser desnecessário atualizar os dados na API.  
 O referido arquivo está disponível na pasta root do git do projeto.
 
 
